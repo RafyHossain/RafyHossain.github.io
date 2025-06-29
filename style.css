@@ -142,10 +142,9 @@ section {
     width: 250px;
     border-radius: 20px;
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    content-align:center;
 }
-.column left:hover{
-    transform:scale(1.05);
-}
+
 .about .right .text {
     font-size: 1.8rem;
     margin-bottom: 15px;
