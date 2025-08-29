@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rafys Dev | Portfolio</title>
+  <meta name="description" content="Rafys Dev — Frontend Web Developer portfolio showcasing projects, skills, and contact information." />
+  <meta name="author" content="Rafy Hossain" />
+  <link rel="icon" href="favicon.ico" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  <!-- Typed.js -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    .container { max-width: 1200px; }
+    #backToTop { position: fixed; bottom: 24px; right: 24px; display: none; }
+    .reveal { opacity: 0; transform: translateY(16px); transition: all .6s ease; }
+    .reveal.revealed { opacity: 1; transform: translateY(0); }
+    .nav-link.active { color: #facc15; }
+  </style>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+
+  <!-- Navbar -->
+  <nav id="navbar" class="fixed top-0 w-full bg-gray-800/80 backdrop-blur shadow-sm z-50">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="#home" class="text-yellow-400 text-2xl font-semibold">Rafys <span class="text-sky-400">Dev</span></a>
+      <ul class="hidden md:flex space-x-8">
+        <li><a href="#home" class="nav-link hover:text-yellow-400">Home</a></li>
+        <li><a href="#about" class="nav-link hover:text-yellow-400">About & Skill</a></li>
+        <li><a href="#services" class="nav-link hover:text-yellow-400">Services</a></li>
+        <li><a href="#projects" class="nav-link hover:text-yellow-400">Projects</a></li>
+        <li><a href="#contact" class="nav-link hover:text-yellow-400">Contact</a></li>
+      </ul>
+      <button class="md:hidden text-white cursor-pointer" id="menu-btn" aria-label="Toggle menu" aria-expanded="false">
+        <i class="fas fa-bars text-2xl"></i>
+      </button>
+    </div>
+    <ul id="menu" class="hidden flex-col space-y-4 bg-gray-800 px-6 py-4 md:hidden text-center">
+      <li><a href="#home" class="nav-link block hover:text-yellow-400">Home</a></li>
+      <li><a href="#about" class="nav-link block hover:text-yellow-400">About</a></li>
+      <li><a href="#services" class="nav-link block hover:text-yellow-400">Services</a></li>
+      <li><a href="#projects" class="nav-link block hover:text-yellow-400">Projects</a></li>
+      <li><a href="#skills" class="nav-link block hover:text-yellow-400">Skills</a></li>
+      <li><a href="#contact" class="nav-link block hover:text-yellow-400">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section id="home" class="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-900 to-gray-900 pt-24 px-6">
+    <div class="container mx-auto flex flex-col-reverse md:flex-row-reverse items-center justify-between max-w-5xl">
+      
+      <!-- Text Section -->
+      <div class="text-center md:text-left md:max-w-xl">
+        <p class="text-xl text-sky-300 mb-2">Hello, my name is</p>
+        <h1 class="text-5xl font-bold text-yellow-400 mb-2">Rafy Hossain</h1>
+        <p class="text-2xl text-sky-400 mb-6">And I'm a <span id="typed" class="font-semibold"></span></p>
+
+        <div class="flex flex-wrap justify-center md:justify-start gap-4 mb-4">
+          <a href="https://wa.me/8801784038430" target="_blank" class="bg-sky-500 hover:bg-sky-600 px-6 py-3 rounded-full text-gray-900 font-semibold">Hire Me</a>
+          <a href="Resume_Rafy.pdf" download class="bg-yellow-400 hover:bg-yellow-500 px-6 py-3 rounded-full text-gray-900 font-semibold">Download Resume</a>
+          <a href="#projects" class="border border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-gray-900 px-6 py-3 rounded-full font-semibold">View Projects</a>
+        </div>
+      </div>
+
+      <!-- Profile Image -->
+      <div class="flex justify-center md:justify-start mb-6 md:mb-0">
+        <img src="profile-pic.png" alt="Rafy Hossain" class="w-80 h-80 md:w-96 md:h-96 object-cover rounded-full border-4 border-yellow-400 shadow-lg">
+      </div>
+
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-20 px-6 bg-gradient-to-br from-gray-900 to-gray-800 text-gray-300">
+    <div class="container mx-auto max-w-5xl">
+      <h2 class="text-center text-yellow-400 text-4xl font-semibold mb-16">About Me</h2>
+      <div class="flex flex-col md:flex-row items-start gap-12">
+        
+        <!-- Text Content -->
+        <div class="md:flex-1 space-y-6 bg-gray-800/50 p-6 rounded-2xl shadow-lg">
+          <h3 class="text-2xl font-semibold text-yellow-400">I'm Rafy and I'm a passionate Frontend Developer</h3>
+          <p class="text-gray-300 text-lg leading-relaxed">
+            I am currently studying BSc in CSE at Patuakhali Science and Technology University. I love exploring new technologies, building web applications, and solving programming challenges. My focus is on creating efficient and elegant solutions with modern web development tools.
+          </p>
+          <p class="text-gray-400 italic">Passionate about Frontend development, React, and creating interactive web experiences.</p>
+        </div>
+
+        <!-- Skills -->
+        <div class="md:flex-1 bg-gray-800/50 p-6 rounded-2xl shadow-lg">
+          <h4 class="text-xl font-semibold text-yellow-400 mb-4">My Skills</h4>
+          <div id="myskills" class="grid grid-cols-2 md:grid-cols-3 gap-4">
+            <span class="bg-gray-700 hover:bg-sky-600 transition-colors duration-300 px-4 py-2 rounded-full text-sm text-white text-center">HTML</span>
+            <span class="bg-gray-700 hover:bg-sky-600 transition-colors duration-300 px-4 py-2 rounded-full text-sm text-white text-center">CSS</span>
+            <span class="bg-gray-700 hover:bg-sky-600 transition-colors duration-300 px-4 py-2 rounded-full text-sm text-white text-center">JavaScript</span>
+            <span class="bg-gray-700 hover:bg-sky-600 transition-colors duration-300 px-4 py-2 rounded-full text-sm text-white text-center">Tailwind</span>
+            <span class="bg-gray-700 hover:bg-sky-600 transition-colors duration-300 px-4 py-2 rounded-full text-sm text-white text-center">React</span>
+            <span class="bg-gray-700 hover:bg-sky-600 transition-colors duration-300 px-4 py-2 rounded-full text-sm text-white text-center">Node.js</span>
+            <span class="bg-gray-700 hover:bg-sky-600 transition-colors duration-300 px-4 py-2 rounded-full text-sm text-white text-center">C</span>
+            <span class="bg-gray-700 hover:bg-sky-600 transition-colors duration-300 px-4 py-2 rounded-full text-sm text-white text-center">C++</span>
+            <span class="bg-gray-700 hover:bg-sky-600 transition-colors duration-300 px-4 py-2 rounded-full text-sm text-white text-center">Java</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="py-20 px-6 bg-gray-900 text-gray-300">
+    <div class="container mx-auto">
+      <h2 class="text-center text-yellow-400 text-4xl font-semibold mb-14">My Services</h2>
+      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 max-w-6xl mx-auto text-center">
+        <!-- Each service card -->
+        <div class="bg-gray-800 rounded-2xl p-8 hover:bg-gray-700 transition cursor-pointer shadow-md">
+          <i class="fas fa-code text-sky-400 text-5xl mb-6"></i>
+          <h3 class="text-xl font-semibold text-yellow-400 mb-2">Web Development</h3>
+          <p>Clean, responsive websites using HTML, CSS, JS & Tailwind.</p>
+        </div>
+        <div class="bg-gray-800 rounded-2xl p-8 hover:bg-gray-700 transition cursor-pointer shadow-md">
+          <i class="fab fa-react text-sky-400 text-5xl mb-6"></i>
+          <h3 class="text-xl font-semibold text-yellow-400 mb-2">Frontend Frameworks</h3>
+          <p>Building interactive apps with React & modern frontend tools.</p>
+        </div>
+        <div class="bg-gray-800 rounded-2xl p-8 hover:bg-gray-700 transition cursor-pointer shadow-md">
+          <i class="fas fa-paint-brush text-sky-400 text-5xl mb-6"></i>
+          <h3 class="text-xl font-semibold text-yellow-400 mb-2">UI/UX Design</h3>
+          <p>Designing intuitive and modern user interfaces & experiences.</p>
+        </div>
+        <div class="bg-gray-800 rounded-2xl p-8 hover:bg-gray-700 transition cursor-pointer shadow-md">
+          <i class="fas fa-server text-sky-400 text-5xl mb-6"></i>
+          <h3 class="text-xl font-semibold text-yellow-400 mb-2">Backend Development</h3>
+          <p>Creating REST APIs & scalable server-side solutions with Node.js.</p>
+        </div>
+        <div class="bg-gray-800 rounded-2xl p-8 hover:bg-gray-700 transition cursor-pointer shadow-md">
+          <i class="fab fa-git-alt text-sky-400 text-5xl mb-6"></i>
+          <h3 class="text-xl font-semibold text-yellow-400 mb-2">Version Control</h3>
+          <p>Managing code efficiently with Git & GitHub workflows.</p>
+        </div>
+        <div class="bg-gray-800 rounded-2xl p-8 hover:bg-gray-700 transition cursor-pointer shadow-md">
+          <i class="fas fa-mobile-alt text-sky-400 text-5xl mb-6"></i>
+          <h3 class="text-xl font-semibold text-yellow-400 mb-2">Responsive Design</h3>
+          <p>Mobile-first websites optimized for all devices and screens.</p>
+        </div>
+        <div class="bg-gray-800 rounded-2xl p-8 hover:bg-gray-700 transition cursor-pointer shadow-md">
+          <i class="fas fa-tachometer-alt text-sky-400 text-5xl mb-6"></i>
+          <h3 class="text-xl font-semibold text-yellow-400 mb-2">Performance Optimization</h3>
+          <p>Improving page load, accessibility & web performance metrics.</p>
+        </div>
+        <div class="bg-gray-800 rounded-2xl p-8 hover:bg-gray-700 transition cursor-pointer shadow-md">
+          <i class="fas fa-rocket text-sky-400 text-5xl mb-6"></i>
+          <h3 class="text-xl font-semibold text-yellow-400 mb-2">SEO & Deployment</h3>
+          <p>Deploying websites and optimizing them for search engines.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+ <section id="projects" class="py-20 px-6 bg-gray-900 text-gray-300">
+  <div class="container mx-auto">
+    <h2 class="text-center text-yellow-400 text-4xl font-semibold mb-14">Featured Projects</h2>
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+      
+      <!-- Project 1 -->
+      <article class="bg-gray-800 rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition">
+        <img src="assets/emergency.png" alt="Project 1" class="w-full h-44 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-yellow-400">Emergency Service Directory</h3>
+          <p class="text-gray-300 mt-2">Full Responsive</p>
+          <div class="flex gap-2 mt-2 text-gray-400 text-sm">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span>
+          </div>
+          <div class="flex justify-between mt-4">
+            <a href="https://rafyhossain.github.io/Emergency-Hotline/" target="_blank" class="bg-sky-500 px-4 py-2 rounded-lg hover:bg-sky-600 text-gray-900 font-semibold">View Live</a>
+            <a href="https://github.com/" target="_blank" class="bg-gray-700 px-4 py-2 rounded-lg hover:bg-gray-600 text-white font-semibold">Source Code</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 2 -->
+      <article class="bg-gray-800 rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition">
+        <img src="assets/app.png" alt="Project 2" class="w-full h-44 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-yellow-400">Payoo Web App</h3>
+          <p class="text-gray-300 mt-2">For Loging  phone:01784038430 pin:3921</p>
+          <div class="flex gap-2 mt-2 text-gray-400 text-sm">
+            <span>React</span><span>CSS</span><span>JS</span>
+          </div>
+          <div class="flex justify-between mt-4">
+            <a href="https://rafyhossain.github.io/Payoo-Mobile-App/" target="_blank" class="bg-sky-500 px-4 py-2 rounded-lg hover:bg-sky-600 text-gray-900 font-semibold">View Live</a>
+            <a href="https://github.com/" target="_blank" class="bg-gray-700 px-4 py-2 rounded-lg hover:bg-gray-600 text-white font-semibold">Source Code</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 3 -->
+      <article class="bg-gray-800 rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition">
+        <img src="assets/qr.png" alt="Project 3" class="w-full h-44 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-yellow-400">QR Code Generator</h3>
+          <p class="text-gray-300 mt-2">Text or link Generate</p>
+          <div class="flex gap-2 mt-2 text-gray-400 text-sm">
+            <span>HTML</span><span>Tailwind</span><span>JS</span>
+          </div>
+          <div class="flex justify-between mt-4">
+            <a href="https://rafyhossain.github.io/QR-Generator/" target="_blank" class="bg-sky-500 px-4 py-2 rounded-lg hover:bg-sky-600 text-gray-900 font-semibold">View Live</a>
+            <a href="https://github.com/" target="_blank" class="bg-gray-700 px-4 py-2 rounded-lg hover:bg-gray-600 text-white font-semibold">Source Code</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="text-center mt-12">
+      <a href="https://github.com" target="_blank" class="bg-yellow-400 hover:bg-yellow-500 px-6 py-3 rounded-full text-gray-900 font-semibold transition">See All Projects</a>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Contact -->
+ <!-- Contact Section -->
+<section id="contact" class="py-20 px-6 bg-gray-800">
+  <div class="container mx-auto text-center">
+    <h2 class="text-yellow-400 text-4xl font-semibold mb-14">Contact Me</h2>
+    
+    <!-- Social Icons -->
+    <div class="flex justify-center gap-6 mb-8 text-gray-400 text-4xl">
+      <a href="https://github.com/rafys-dev" target="_blank" class="hover:text-sky-400"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/rafy-hossain" target="_blank" class="hover:text-sky-400"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:rafyhossain56@gmail.com" class="hover:text-sky-400"><i class="fas fa-envelope"></i></a>
+    </div>
+
+    <!-- Contact Form -->
+    <form id="contactForm" class="max-w-3xl mx-auto mt-12 bg-gray-900 rounded-2xl p-6 shadow-md">
+      <input type="text" name="name" placeholder="Your Name" class="w-full mb-4 p-3 rounded bg-gray-800 border border-gray-700" required>
+      <input type="email" name="email" placeholder="Your Email" class="w-full mb-4 p-3 rounded bg-gray-800 border border-gray-700" required>
+      <textarea name="message" placeholder="Your Message" rows="5" class="w-full mb-4 p-3 rounded bg-gray-800 border border-gray-700" required></textarea>
+      <button type="submit" class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold px-6 py-3 rounded-lg">Send</button>
+      <p id="formMsg" class="mt-4 text-sm text-gray-400"></p>
+    </form>
+  </div>
+</section>
+
+<!-- EmailJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  (function(){
+    emailjs.init("UEiVkWENGIiF4J85y"); // ✅ তোমার PUBLIC KEY
+  })();
+
+  const contactForm = document.getElementById('contactForm');
+  const formMsg = document.getElementById('formMsg');
+
+  contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    emailjs.sendForm('service_rfhijbt', 'template_4t3ph2p', this)
+      .then(() => {
+        formMsg.textContent = "✅ Message sent successfully!";
+        formMsg.className = "mt-4 text-sm text-green-400";
+        contactForm.reset();
+      }, (error) => {
+        formMsg.textContent = "❌ Failed to send message. Try again.";
+        formMsg.className = "mt-4 text-sm text-red-400";
+        console.error("EmailJS Error:", error);
+      });
+  });
+</script>
+
+<!-- Footer -->
+<footer class="w-full bg-gray-900 text-center py-6 text-gray-500">
+  © 2025 Rafys Dev. All rights reserved. Designed & Developed by Rafys Dev.
+</footer>
+
+  <!-- JS -->
+  <script src="main.js"></script>
+  
+</body>
+</html>
