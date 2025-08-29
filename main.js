@@ -1,5 +1,5 @@
  // Typed.js for hero
-    const typed = new Typed('#typed', { strings: ["Frontend Developer", "React Developer", "Web Designer"], typeSpeed: 60, backSpeed: 40, loop: true });
+    const typed = new Typed('#typed', { strings: ["Frontend Web Developer", " Backend Learner"], typeSpeed: 60, backSpeed: 40, loop: true });
 
     // Mobile menu toggle
     const menuBtn = document.getElementById('menu-btn');
