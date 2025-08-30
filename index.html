@@ -303,25 +303,52 @@
 
   <!-- Contact Section -->
   <section id="contact" class="py-20 px-6 bg-gray-800">
-    <div class="container mx-auto text-center">
-      <h2 class="text-white text-4xl font-semibold mb-14">Contact Me</h2>
+  <div class="container mx-auto text-center">
+    <h2 class="text-white text-4xl font-semibold mb-14">Contact Me</h2>
 
-      <!-- Social Icons -->
-      <div class="flex justify-center gap-6 mb-8 text-gray-400 text-4xl">
-        <a href="https://www.linkedin.com/in/md-rafy-hossain-b06291348/" target="_blank" class="hover:text-sky-400"><i class="fab fa-linkedin"></i></a>
-        <a href="mailto:rafyhossain56@gmail.com" class="hover:text-sky-400"><i class="fas fa-envelope"></i></a>
-        <a href="https://www.upwork.com/freelancers/~0156632fec08aaa7f0" target="_blank" class="hover:text-sky-400"><i class="fas fa-briefcase"></i></a>
-      </div>
-
-      <!-- Contact Form -->
-      <form id="contactForm" class="max-w-3xl mx-auto mt-12 bg-gray-900 rounded-2xl p-6 shadow-md">
-        <input type="text" name="name" placeholder="Your Name" class="w-full mb-4 p-3 rounded bg-gray-800 border border-gray-700" required>
-        <input type="email" name="email" placeholder="Your Email" class="w-full mb-4 p-3 rounded bg-gray-800 border border-gray-700" required>
-        <textarea name="message" rows="5" placeholder="Your Message" class="w-full mb-4 p-3 rounded bg-gray-800 border border-gray-700" required></textarea>
-        <button type="submit" class="w-full bg-sky-500 hover:bg-sky-600 text-gray-900 py-3 rounded-lg font-semibold">Send Message</button>
-      </form>
+    <!-- Social Icons -->
+    <div class="flex justify-center gap-6 mb-8 text-gray-400 text-4xl">
+      <a href="https://www.linkedin.com/in/md-rafy-hossain-b06291348/" target="_blank" class="hover:text-sky-400"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:rafyhossain56@gmail.com" class="hover:text-sky-400"><i class="fas fa-envelope"></i></a>
+      <a href="https://www.upwork.com/freelancers/~0156632fec08aaa7f0" target="_blank" class="hover:text-sky-400"><i class="fas fa-briefcase"></i></a>
     </div>
-  </section>
+
+    <!-- Contact Form -->
+    <form id="contactForm" class="max-w-3xl mx-auto mt-12 bg-gray-900 rounded-2xl p-6 shadow-md">
+      <input type="text" name="name" placeholder="Your Name" class="w-full mb-4 p-3 rounded bg-gray-800 border border-gray-700" required>
+      <input type="email" name="email" placeholder="Your Email" class="w-full mb-4 p-3 rounded bg-gray-800 border border-gray-700" required>
+      <textarea name="message" rows="5" placeholder="Your Message" class="w-full mb-4 p-3 rounded bg-gray-800 border border-gray-700" required></textarea>
+      <button type="submit" class="w-full bg-sky-500 hover:bg-sky-600 text-gray-900 py-3 rounded-lg font-semibold">Send Message</button>
+      <p id="formMsg" class="mt-4 text-sm text-gray-400"></p>
+    </form>
+  </div>
+</section>
+
+<!-- EmailJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  (function(){
+    emailjs.init("UEiVkWENGIiF4J85y"); // User ID
+  })();
+
+  const contactForm = document.getElementById('contactForm');
+  const formMsg = document.getElementById('formMsg');
+
+  contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    emailjs.sendForm('service_rfhijbt', 'template_4t3ph2p', this)
+      .then(() => {
+        formMsg.textContent = "✅ Message sent successfully!";
+        formMsg.className = "mt-4 text-sm text-green-400";
+        contactForm.reset();
+      }, (error) => {
+        formMsg.textContent = "❌ Failed to send message. Try again.";
+        formMsg.className = "mt-4 text-sm text-red-400";
+        console.error("EmailJS Error:", error);
+      });
+  });
+</script>
 
   <!-- Footer -->
   <footer class="py-8 bg-gray-900 text-gray-400 text-center">
